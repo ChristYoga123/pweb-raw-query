@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\VenueCategoryController;
+use App\Http\Controllers\Admin\VenueController;
 use App\Models\Venue;
 use Illuminate\Support\Facades\Route;
 
@@ -37,4 +38,7 @@ Route::prefix("admin")->name("admin.")->group(function () {
 
     // Category Venue
     Route::resource('kategori_venue', VenueCategoryController::class);
+
+    // Venue
+    Route::resource('venue', VenueController::class);
 });

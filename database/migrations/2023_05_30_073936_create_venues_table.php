@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("slug");
             $table->bigInteger("price_per_night");
             $table->string("location");
-            $table->string("hero-image");
+            $table->string("hero_image");
             $table->longText("description");
             $table->foreignId("venue_category_id")->constrained();
             $table->timestamps();

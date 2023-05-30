@@ -18,8 +18,8 @@
             </a>
         </li>
         <li>
-            <a href="{{ route("admin.kategori_venue.index") }}" class="side-menu {{ Route::is("admin.kategori_venue.*") ? "side-menu--active" : "" }}">
-                <div class="side-menu__icon"> <i data-feather="database"></i> </div>
+            <a href="{{ route("admin.venue.index") }}" class="side-menu {{ Route::is("admin.venue.*") ? "side-menu--active" : "" }}">
+                <div class="side-menu__icon"> <i data-feather="map"></i> </div>
                 <div class="side-menu__title"> Data Venue </div>
             </a>
         </li>

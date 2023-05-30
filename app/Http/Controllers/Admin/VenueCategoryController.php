@@ -75,7 +75,7 @@ class VenueCategoryController extends Controller
     public function update(Request $request, VenueCategory $kategori_venue)
     {
         $request->validate([
-            "name" => "required|unique:venue_categories,name," . $kategori_venue->slug
+            "name" => "required|unique:venue_categories,name," . $kategori_venue->id
         ]);
         DB::beginTransaction();
         try {
