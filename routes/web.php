@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AuthController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\VenueCategoryController;
+use App\Models\Venue;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +19,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+/* Admin */
+// Non Auth
+Route::prefix("admin")->name("admin.")->group(function () {
+    Route::get("login", [AuthController::class, "index"])->name("login.index");
+    Route::post("login", [AuthController::class, "login"])->name("login");
+});
+
+// Auth
+Route::prefix("admin")->name("admin.")->group(function () {
+    Route::post("logout", [AuthController::class, "logout"])->name("logout");
+
+    // Dashboard
+    Route::get("/", [DashboardController::class, "index"])->name("dashboard.index");
+
+    // Category Venue
+    Route::resource('kategori_venue', VenueCategoryController::class);
 });

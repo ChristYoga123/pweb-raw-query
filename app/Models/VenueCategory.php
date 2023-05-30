@@ -15,4 +15,9 @@ class VenueCategory extends Model
     {
         return $this->hasMany(Venue::class);
     }
+
+    public function getRouteKeyName()
+    {
+        return "slug";
+    }
 }
