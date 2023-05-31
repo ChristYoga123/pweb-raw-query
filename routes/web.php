@@ -4,7 +4,9 @@ use App\Http\Controllers\Admin\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\VenueCategoryController;
 use App\Http\Controllers\Admin\VenueController;
+use App\Http\Controllers\Admin\VenueGalleryController;
 use App\Models\Venue;
+use App\Models\VenueGallery;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,4 +43,7 @@ Route::prefix("admin")->name("admin.")->group(function () {
 
     // Venue
     Route::resource('venue', VenueController::class);
+
+    // Venue Gallery
+    Route::resource("galeri_venue", VenueGalleryController::class);
 });

@@ -23,5 +23,11 @@
                 <div class="side-menu__title"> Data Venue </div>
             </a>
         </li>
+        <li>
+            <a href="{{ route("admin.galeri_venue.index") }}" class="side-menu {{ Route::is("admin.galeri_venue.*") ? "side-menu--active" : "" }}">
+                <div class="side-menu__icon"> <i data-feather="camera"></i> </div>
+                <div class="side-menu__title"> Data Galeri Venue </div>
+            </a>
+        </li>
     </ul>
 </nav>

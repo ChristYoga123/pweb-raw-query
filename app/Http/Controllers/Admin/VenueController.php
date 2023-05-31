@@ -73,6 +73,10 @@ class VenueController extends Controller
      */
     public function show(Venue $venue)
     {
+        $venue =  DB::select("SELECT * FROM venues WHERE slug = ? LIMIT 1", [$venue->slug]);
+        return view("pages.admin.venue.show")->with([
+            "venue" => $venue[0]
+        ]);
     }
 
     /**
@@ -123,7 +127,6 @@ class VenueController extends Controller
      */
     public function destroy(Venue $venue)
     {
-        DB::delete("DELETE FROM venue_galleries WHERE id = ?", [$venue->id]);
         DB::delete("DELETE FROM venues WHERE slug = ?", [$venue->slug]);
         return redirect()->back()->with("success", "Data berhasil dihapus");
     }

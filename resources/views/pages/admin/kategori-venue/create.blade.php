@@ -13,6 +13,7 @@
                 <div>
                     <label>Nama Kategori</label>
                     <input type="text" class="input w-full border mt-2" placeholder="Masukkan nama kategori venue" name="name">
+                </div>
                 <div class="text-right mt-5">
                     <button type="button" class="button w-24 border text-gray-700 mr-1">Cancel</button>
                     <button type="submit" class="button w-24 bg-theme-1 text-white">Save</button>
